@@ -12,13 +12,16 @@ while radi==True:
                 datoteka.write(a)
                 datoteka.write("\n")
                 datoteka.close()
-                print("Bilješka je uspješno spremljena.")
+                print("Bilješka je uspješno spremljena!")
     elif unos==2:
         with open("biljeznica.txt", "r") as datoteka:
                 sadrzaj = datoteka.read()
-                print(sadrzaj)
-                datoteka.close()
+                if not sadrzaj.strip():
+                    print("Datoteka ne sadrži bilješke!")
+                    datoteka.close()
+                else:
+                    print(sadrzaj)
+                    datoteka.close()
     elif unos==3:
             radi=False
             print("Doviđenja!")
-                
